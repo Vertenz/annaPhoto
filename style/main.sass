@@ -1,0 +1,116 @@
+//import SASS files
+@import "_var"
+//end import SASS files
+//import fonts
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC&display=swap')
+//end import fonts
+//general rules
+*
+  padding: 0
+  margin: 0
+  color: white
+  text-decoration: none
+  font-family: 'Cormorant SC', serif
+
+.hidden
+  visibility: hidden !important
+
+.show
+  visibility: visible !important
+  transition: 1.2s !important
+  opacity: 1 !important
+
+.active
+  background-color: $attentionColor !important
+
+.attention
+  color: $attentionColor !important
+
+.padding
+  padding-left: 55px
+  padding-right: 55px
+//end general rules
+.header
+  background-size: cover
+  height: 100vh
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(9, 8, 8, 0.2) 68.23%), linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(16, 15, 15, 0.25) 60.94%), url("../pictures/header.jpg")
+  background-size: cover
+  &__block
+    display: flex
+    padding: 1px
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    margin-top: 191px
+  &__h1
+    font-size: 172px
+    line-height: 120px
+    width: 1400px
+    text-align: center
+    font-style: normal
+    font-weight: 500
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
+    padding-bottom: 25px
+    border-bottom: 5px solid $attentionColor
+    text-transform: capitalize
+  &__h3
+    padding: 1px
+    margin-top: 50px
+    font-style: normal
+    font-weight: normal
+    font-size: 55px
+    line-height: 48px
+  &__text
+    font-weight: 500
+    font-size: 62px
+    line-height: 63px
+    padding: 1px
+    margin-top: 50px
+  &__scroll
+    padding: 1px
+    margin-top: 161px
+    display: flex
+    justify-content: center
+    align-items: center
+  &__scroll_img
+    transform: rotate(180deg)
+    width: 96px
+    height: 62px
+
+
+.menu
+  padding-top: 75px
+  padding-bottom: 10px
+  display: flex
+  justify-content: flex-end
+  align-items: center
+  &__button:hover .menu__block
+    background-color: $attentionColor
+  &__block
+    display: flex
+    background-color: white
+    width: 39px
+    height: 5px
+    margin-bottom: 7px
+    transition: 0.8s
+  &__ul
+    height: 60px
+    display: flex
+    justify-content: center
+    text-decoration: none
+    list-style: none
+    visibility: hidden
+    opacity: 0
+  &__li
+    margin-right: 77px
+    font-weight: 500
+    font-size: 43px
+    line-height: 48px
+    -moz-user-select: none
+    -ms-user-select: none
+    -o-user-select: none
+    -webkit-user-select: none
+    &:hover
+      font-weight: 600
+      border-bottom: 2px solid $attentionColor
+
