@@ -10,7 +10,11 @@
   margin: 0
   color: white
   text-decoration: none
+  list-style: none
   font-family: 'Cormorant SC', serif
+
+body
+  background-color: $backCollor
 
 .hidden
   visibility: hidden !important
@@ -29,10 +33,31 @@
 .padding
   padding-left: 55px
   padding-right: 55px
+
+.up
+  width: 68px
+  height: 68px
+  border-radius: 50%
+  position: fixed
+  display: flex
+  justify-content: center
+  align-items: center
+  top: 85%
+  left: -23px
+  &:hover
+    background: rgba(9, 8, 8, 0.5)
+  &__link
+    line-height: 50px
+    font-size: xxx-large
+    font-size: -webkit-xxx-large
+    display: block
+    height: 100%
+
 //end general rules
 .header
   background-size: cover
   height: 100vh
+  min-height: 1016px
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(9, 8, 8, 0.2) 68.23%), linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(16, 15, 15, 0.25) 60.94%), url("../pictures/header.jpg")
   background-size: cover
   &__block
@@ -67,11 +92,16 @@
     padding: 1px
     margin-top: 50px
   &__scroll
-    padding: 1px
-    margin-top: 161px
     display: flex
     justify-content: center
     align-items: center
+    padding: 1px 1px 15px
+
+    &_a
+      transition: 0.3s
+    &_a:hover
+      background: rgba(245, 64, 64, 0.1)
+      border-radius: 50px
   &__scroll_img
     transform: rotate(180deg)
     width: 96px
@@ -111,6 +141,83 @@
     -o-user-select: none
     -webkit-user-select: none
     &:hover
-      font-weight: 600
       border-bottom: 2px solid $attentionColor
 
+.about
+  padding-top: 157px
+  display: grid
+  grid-template-columns: 494px 1fr
+  &__left
+    border-right: 3px solid $attentionColor
+  &__h1
+    font-weight: 300
+    font-size: 72px
+    line-height: 76px
+  &__right
+    padding-top: 115px
+    padding-left: 50px
+  &__h2
+    &_margin
+      margin-top: 9px
+  &__text
+    font-weight: 300
+    font-size: 24px
+    line-height: 40px
+    margin-top: 8px
+
+.works
+  @extend .about
+  &__right
+    padding-left: 47px
+    padding-top: 171px
+    display: grid
+    grid-template-columns: repeat( 2, minmax(508px, 546px) )
+    grid-gap: 161px
+  &__img
+    border-top: 40px solid rgba(255, 255, 255, 0.8)
+    border-bottom: 40px solid rgba(255, 255, 255, 0.8)
+    transition: 0.5s
+  &__block
+    display: flex
+    position: relative
+    margin-bottom: 175px
+    &_big
+      grid-column: 1 / 3
+    &:hover .works__description
+      display: flex
+    &:hover .works__img
+      filter: brightness(0.3)
+      border-top: 40px solid $attentionColor
+      border-bottom: 40px solid $attentionColor
+  &__description
+    width: 500px
+    position: absolute
+    text-align: center
+    top: 50%
+    flex-direction: column
+    display: none
+    z-index: 3
+  &__h2
+    font-size: 68px
+    line-height: 76px
+    margin-top: -222px
+    padding-bottom: 131px
+    font-weight: normal
+  &__text
+    font-size: 36px
+    line-height: 42px
+.nav
+  @extend .about__left
+  margin-top: 31px
+  &__ul
+    padding-left: 63px
+    padding-top: 60px
+    transition: 0.5s
+  &__li
+    font-size: 48px
+    line-height: 76px
+  &__link
+    &:hover
+      color: $attentionColor
+  &__h3
+    @extend .about__h1
