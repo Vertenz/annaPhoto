@@ -6,10 +6,14 @@ document.addEventListener("DOMContentLoaded", () => {
             let cord = section.getBoundingClientRect();
             if (cord['y'] <= -411) {
                 nav.style.position = 'fixed';
-                nav.style.bottom = '45%';
+                nav.style.bottom = '22%';
+                nav.style.left = '1%';
+                nav.style.width = '25%';
             }else {
                 nav.style.position = '';
                 nav.style.bottom = '';
+                nav.style.left = '';
+                nav.style.width = '';
             }
         }, 10);
 });
